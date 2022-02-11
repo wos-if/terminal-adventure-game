@@ -20,7 +20,7 @@ def initBalance():
 def requestBalance(): 
     with open('./src/libs/balance.txt') as f:
         contents = f.read()
-        return int(contents)
+        return int(float(contents))
 
 def updateBalance(amount):
     with open('./src/libs/balance.txt') as f:
@@ -28,7 +28,7 @@ def updateBalance(amount):
   
     file = open("./src/libs/balance.txt", "r+") 
     file.truncate(0) 
-    file.write(str(int(contents)+amount))
+    file.write(str(int(float(contents))+amount))
     file.close() 
 
 def generateRates(amount):
